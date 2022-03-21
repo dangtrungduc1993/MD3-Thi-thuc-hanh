@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StatusRequest;
 use App\Models\Status;
-use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
+use App\Http\Requests\StatusRequest;
+use App\Repositories\StatusRepository;
 
 
 class StatusController extends Controller
@@ -23,13 +23,13 @@ class StatusController extends Controller
     {
         $statuses = $this->statusRepository->getAll();
         // $statuses = Status::all();
-        dd($statuses);
+        // dd($statuses);
         return view('status.list', compact('statuses'));
     }
     public function create()
     {
         // $categories = $this->categoryRepository->getAll();
-        return view('backend.status.create');
+        return view('status.create');
     }
 
     public function store(StatusRequest $request)
@@ -41,13 +41,13 @@ class StatusController extends Controller
     {
         $status = $this->statusRepository->getById($id);
 //        dd($status);
-        return view('backend.status.detail', compact('status'));
+        return view('status.detail', compact('status'));
 
     }
     public function edit($id)
     {
         $status = $this->statusRepository->getById($id);
-        return view('backend.status.update', compact('status','id'));
+        return view('status.update', compact('status','id'));
 
     }
 

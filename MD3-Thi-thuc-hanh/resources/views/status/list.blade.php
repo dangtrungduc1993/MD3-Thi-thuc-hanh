@@ -1,4 +1,5 @@
 <a href="{{route('status.showFormCreate')}}">Create status</a>
+
 <table border="1">
     <thead>
         <tr>
@@ -12,7 +13,7 @@
         <tr>
             <td>{{$status->name}}</td>
             <td><a href="{{route('status.showFormUpdate',$status->id)}}">Update</a></td>
-            <td><a onclick="confirm('Are you sure')" href="{{route('status.delete',$status->id)}}">Delete</a></td>
+            <td><a onclick="return confirm('Are you sure')" href="{{route('status.delete',$status->id)}}">Delete</a></td>
             <td><a href="{{route('status.detail',$status->id)}}">Detail</a></td>
         </tr>
         @endforeach

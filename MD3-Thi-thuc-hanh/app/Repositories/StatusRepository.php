@@ -3,14 +3,13 @@
 namespace App\Repositories;
 
 use App\Models\Status;
-use http\Env\Request;
 
 class StatusRepository extends BaseRepository
 {
 //    public $table = 'statuss';
-    public function getTable()
+    public function getModel()
     {
-        return 'statuses';
+        return Status::class;
     }
 
     public function store($request)
